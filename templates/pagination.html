@@ -1,0 +1,16 @@
+<div class="container">
+    <div class="row">
+    <span class="pagination">
+        {% if page.has_previous %}
+            <a href="?page={{ page.previous_page_number }}">anterior</a>
+        {% endif %}
+ 
+      <span class="active">
+          página {{ page.number }} de {{ page.paginator.num_pages }}
+      </span>
+    {% if page.has_next %}
+        <a href="?page={{ page.next_page_number }}">siguiente</a>
+    {% endif %}
+    </span>
+</div>
+</div>

@@ -1,0 +1,9 @@
+{% extends "index.html" %}
+ 
+{% block title %}{{ post.title }}{% endblock %}
+ 
+{% block content %}
+   <h3>{{ post.title }}</h3>
+    <p class="small">Publicado {{ post.publish }} por {{ post.author }}</p>
+    <p>{{ post.content|linebreaks }}</p>
+{% endblock %}

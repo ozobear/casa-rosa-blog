@@ -1,0 +1,65 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}{% endblock %}</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  <link rel="stylesheet" href="{% static "css/bulma.css" %}">
+  <link rel="stylesheet" href="{% static "css/bulma-carousel.css" %}">
+</head>
+<body>
+	<section class="hero is-medium has-carousel">
+		<div class="hero-head">
+	      <nav class="navbar is-transparent">
+	        <div class="container">
+	          <div class="navbar-brand">
+	            <a class="navbar-item">
+	              <img src="https://i.imgur.com/b93lpud.png" alt="Casa-Rosa-Netlab-logo">
+	            </a>
+	            <span class="navbar-burger burger" data-target="navbarMenuHeroA">
+	              <span></span>
+	              <span></span>
+	              <span></span>
+	            </span>
+	          </div>
+	          <div id="navbarMenuHeroA" class="navbar-menu">
+	            <div class="navbar-end">
+	              <a class="navbar-item has-text-white is-active">
+	                Home
+	              </a>
+	              <a class="navbar-item has-text-white">
+	                Examples
+	              </a>
+	              <a class="navbar-item has-text-white">
+	                Documentation
+	              </a>
+	              <span class="navbar-item has-text-white">
+	                <a class="button is-primary is-inverted">
+	                  <span class="icon">
+	                    <i class="fa fa-github"></i>
+	                  </span>
+	                  <span>Download</span>
+	                </a>
+	              </span>
+	            </div>
+	          </div>
+	        </div>
+	      </nav>
+	    </div>
+	</section>
+	<footer class="footer">
+	    <div class="container">
+	      <div class="content has-text-centered">
+	        <p>
+	          <strong>Casa Rosa Netlab</strong> por <a href="https://www.facebook.com/garagedigital">Garage Digital</a>. The source code is licensed
+	          <a href="http://opensource.org/licenses/mit-license.php">MIT</a>.
+	        </p>
+	      </div>
+	    </div>
+	</footer>
+	<script type="text/javascript" src={% static "js/carousel.js" %}></script>
+</body>
