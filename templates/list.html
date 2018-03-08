@@ -2,3 +2,36 @@
 
 {% block title %}Casa Rosa Netlab - Blog{% endblock %}
 
+{%block titulo %}
+<div class="col-md-7 col-sm-6 hero">
+	<div class="hero-content">
+		<h1>Blog</h1>
+	</div>
+	<!-- hero --> 
+</div>
+{% endblock %}
+
+{% block content %}
+	{% for post in posts%}
+	<div class="post-item">
+		<h3>{{post.title}}</h3>
+		<a href="#">
+			{% if post.image %}
+	    		<img src="{{post.image.url}}">
+			{% endif %}
+		</a>
+		<br><br>
+		<p class="post-description">{{post.description}}</p>
+		<a class="post-more" href="#">Continue Reading&nbsp;&raquo;</a>
+		<div class="post-item-panel">
+		<ul>
+			<li class="date">
+			<p><i class="icon-calendar"></i>{{post.publish}}</p></li>
+			<li><p><i class="icon-user"></i>by {{post.author}}</p></li>
+			<li><p><i class="icon-tags"></i><a href="">photos</a>, <a href="">design</a></p></li>
+		</ul>
+		</div>
+	</div>
+	{% endfor %}
+{% endblock %}
+

@@ -6,7 +6,7 @@ class ArtistAdmin(admin.ModelAdmin):
 	list_filter = ('name',)
 	search_fields = ('name',)
 	prepopulated_fields = {'slug': ('name',)}
-	ordering = ['name']
+	ordering = ['-name']
 
 
 admin.site.register(Artist, ArtistAdmin)

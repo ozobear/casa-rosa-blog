@@ -12,7 +12,7 @@ class Post(models.Model):
 	title = models.CharField(max_length=125)
 	slug = models.SlugField(unique=True, max_length=255)
 	author = models.ForeignKey(User, related_name='blog_posts', on_delete=models.CASCADE)
-	description = models.CharField(max_length=250)
+	description = models.CharField(max_length=70)
 	content = models.TextField()
 	image = models.ImageField(blank=True)
 	publish = models.DateTimeField(default=timezone.now)

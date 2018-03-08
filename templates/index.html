@@ -1,3 +1,53 @@
 {% extends "base.html" %}
 
 {% block title %}Casa Rosa Netlab - Inicio{% endblock %}
+
+{%block titulo %}
+<div class="col-md-7 col-sm-6 hero">
+	<div class="hero-content">
+		<h1>Home</h1>
+	</div>
+	<!-- hero --> 
+</div>
+{% endblock %}
+
+{% block content%}
+{% for artist in artists %}
+<div class="col-sm-6 portfolio-item"> <a href="{% url 'home:artist_detail_view' slug=artist.slug %}" class="portfolio-link">
+	<div class="caption">
+		<div class="caption-content">
+			<h3>{{artist.name}}</h3>
+		</div>
+	</div>
+	<img src="{{artist.image.url}}" class="img-responsive" alt=""> </a> 
+</div>
+{% endfor %}
+{% endblock %}
+
+{% block servicios %}
+  <div class="container">
+    <div class="row">
+      <div class="col-md-5 col-sm-6">
+        <h4>Creemos en nuestro talento local & nacional</h4>
+        <p>Por ello promovemos sus obras y buscamos que sus proyectos lleguen cada vez a más gente con el afán de crecer y proyectar mejoras tanto de ellos como nosotros.</p>
+      </div>
+      <div class="col-md-7 col-sm-6">
+        <div class="col-md-4 col-sm-6 service text-center"> <span class="icon icon-telescope"></span>
+          <div class="service-content">
+            <h5>Management & Booking</h5>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-6 service text-center"> <span class="icon icon-gears"></span>
+          <div class="service-content">
+            <h5>Producción</h5>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-6 service text-center"> <span class="icon icon-megaphone"></span>
+          <div class="service-content">
+            <h5>Brand Marketing</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

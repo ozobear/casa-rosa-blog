@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load embed_video_tags %}
+
+{% block title %}Casa Rosa Netlab – {{artist.name}}{% endblock %}
+
+{%block titulo %}
+<div class="col-md-7 col-sm-6 hero">
+	<div class="hero-content">
+		<h1>{{artist.name}}</h1>
+	</div>
+	<!-- hero --> 
+</div>
+{% endblock %}
+
+{% block content %}
+<!-- portfolio grid section -->
+<section id="work-detail">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 work-detail ">
+        <div class="work-detail"> <img src="{{artist.image.url}}" class="img-responsive" alt="">
+          <p class="extra-padding">{{artist.description}}</p>
+          <p class="extra-padding">
+            {% video artist.video as artvideo %}
+              {% video artvideo "medium" %}
+            {% endvideo %}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- portfolio grid section --> 
+<!-- service section -->
+<section id="backto" class="work-detail section">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2 text-center section"> <a href="../"><i class="fa fa-th fa-2x"></i></a>
+        <p>Regresar a home</p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- service section --> 
+{% endblock %}

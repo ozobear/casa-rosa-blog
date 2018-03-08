@@ -23,6 +23,6 @@ app_name = "blog"
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    re_path(r'', include('home.urls', namespace="home")),
     re_path(r'blog/', include('blog.urls', namespace="blog")),
+    re_path(r'', include('home.urls', namespace="home")),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
